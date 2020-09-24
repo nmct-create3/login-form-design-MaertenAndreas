@@ -25,12 +25,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: 'Inter', sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
@@ -47,13 +47,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -158,19 +158,33 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #055ee3;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #91bdff;
 }
+
+/*
+    Elements: forms
+    ---
+    Default markup for forms
+*/
+label,
+input {
+    display: block;
+}
+
+/* input {
+    display: block;
+} */
 
 /*------------------------------------*\
 #OBJECTS
@@ -431,6 +445,30 @@ a:focus {
     ---
     Website main logo
 */
+.c-logo {
+    display: flex;
+    justify-content: center;
+
+    height: 24px;
+}
+
+.c-logo__inner-circle {
+    fill: #3385FF;
+}
+
+.c-logo__outer-circle {
+    fill: #1B4186;
+}
+
+.c-logo__text {
+    fill: #20223A;
+}
+
+.c-logo__symbol {
+    display: block;
+
+    height: 100%;
+}
 
 /*
     Component: Card
@@ -443,6 +481,14 @@ a:focus {
     ---
     Everything form related here
 */
+.c-form-field {
+
+}
+
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+}
 
 /*
     Component: Input
@@ -451,10 +497,29 @@ a:focus {
 */
 
 .c-input {
+    outline: none;
 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+
+    width: 100%;
+
+    background-color: #fff;
+    border: 2px solid #E2E3E7;
+    border-radius: 3px;
+    color: #20223A;
+
+    padding: 10px 18px;
 }
 
 .c-input:focus {
+    border-color: #4f95ff;
+    box-shadow: 0 0 3px 3px #4f95ff4d;
 }
 
 /*
@@ -464,7 +529,15 @@ a:focus {
 */
 
 .c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
+}
 
+.c-label--option {
+    margin: 0;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -478,25 +551,76 @@ a:focus {
     ---
     Class to put on form buttons or links
 */
-
 .c-button {
+    outline: none;
 
+    color: #fff;
+    background-color: #3385FF;
+
+    border: 1px solid #2E77E6;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    width: 100%;
+    padding: 12px;
 }
 
 .c-button:hover {
+    cursor: pointer;
 
+    background-color: #4F95FF;
 }
 
 .c-button:focus {
-
+    box-shadow: 0 0 3px 3px #3385FF;
 }
 
 .c-button:active {
-
+    background-color: #2E77E6;
 }
 
 .c-button--block {
 
+}
+
+/*
+    Component: Card
+    ---
+    Class to put on card divs
+*/
+.c-card {
+    background-color: #fff;
+
+    border-radius: 3px;
+    border: 1px solid #0000000d;
+    box-shadow: 0 3px 4px #00000013;
+}
+
+.c-card__body {
+    margin: 0;
+
+    padding: 0 48px;
+}
+
+.c-card__title {
+    margin: 0;
+    padding: 48px;
+
+    text-align: center;
+}
+
+.c-card__footer {
+    padding: 24px;
+
+    text-align: center;
+
+    border-top: 1px solid #E2E3E7;
+}
+.c-card__footer p {
+    margin: 0;
 }
 
 /*------------------------------------*\
