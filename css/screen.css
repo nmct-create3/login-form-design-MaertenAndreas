@@ -7,7 +7,38 @@
 \*------------------------------------*/
 
 :root {
+    --root-font-size: 16px;
 
+    --global-baseline: 8px;
+    --global-whitespace: calc(var(--global-baseline) * 3); /* 24 */
+    --global-line-height: calc(var(--global-baseline) * 3);
+
+    --def-font-color: #20223a;
+    --def-background-color: #f5f6fa;
+
+    --primary-color: #3385ff;
+
+    --anchor-active: #055ee3;
+    --anchor-hover: #91bdff;
+
+    --logo-inner-circle: var(--primary-color);
+    --logo-outer-circle: #1B4186;
+    --logo-text: #20223A;
+
+    --input-background: #fff;
+    --input-border: 2px solid #E2E3E7;
+    --input-text-color: #20223A;
+    --input-focus-border-color: #4f95ff;
+    --input-focus-boxshadow: 0 0 3px 3px #4f95ff4d;
+
+    --button-color: #fff;
+    --button-background-color: var(--primary-color);
+    --button-border: 1px solid #2E77E6;
+    --button-hover-bg-color: #4F95FF;
+    --button-focus-boxshadow: 0 0 3px 3px var(--primary-color);
+    --button-active-bg-color: #2E77E6;
+
+    --label-color: #606274;
 }
 
 /* CSS variables here */
@@ -23,14 +54,14 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: var(--root-font-size);
+    line-height: var(--global-line-height);
     font-family: 'Inter', sans-serif;
-    color: #20223a;
+    color: var(--def-font-color);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #F5F6FA;
+    background-color: var(--def-background-color);
 }
 
 body {
@@ -51,13 +82,13 @@ body {
 */
 
 ::-moz-selection {
-    background: #3385FF;
+    background: var(--primary-color);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: #3385FF;
+    background: var(--primary-color);
     color: white;
     text-shadow: none;
 }
@@ -91,19 +122,19 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
+    line-height: calc(var(--global-baseline) * 6);
     margin: 0 0 24px;
 }
 
 h2 {
     font-size: 32px;
-    line-height: 40px;
+    line-height: calc(var(--global-baseline) * 5);
     margin: 0 0 24px;
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
+    line-height: calc(var(--global-baseline) * 4);
     margin: 0 0 24px;
 }
 
@@ -111,7 +142,7 @@ h4,
 h5,
 h6 {
     font-size: 20px;
-    line-height: 24px;
+    line-height: calc(var(--global-baseline) * 3);
     margin: 0 0 24px;
 }
 
@@ -138,7 +169,7 @@ li ol {
 blockquote {
     font-style: normal;
     font-size: 23px;
-    line-height: 32px;
+    line-height: calc(var(--global-baseline) * 3);
     margin: 0 0 24px;
 }
 
@@ -150,7 +181,7 @@ blockquote * {
 figcaption {
     font-weight: 400;
     font-size: 12px;
-    line-height: 16px;
+    line-height: calc(var(--global-baseline) * 2);
     margin-top: 8px;
 }
 
@@ -162,18 +193,18 @@ hr {
 }
 
 a {
-    color: #3385FF;
+    color: var(--primary-color);
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: #055ee3;
+    color: var(--anchor-active);
 }
 
 a:hover,
 a:focus {
-    color: #91bdff;
+    color: var(--anchor-hover);
 }
 
 /*
@@ -460,15 +491,15 @@ input {
 }
 
 .c-logo__inner-circle {
-    fill: #3385FF;
+    fill: var(--logo-inner-circle);
 }
 
 .c-logo__outer-circle {
-    fill: #1B4186;
+    fill: var(--logo-outer-circle);
 }
 
 .c-logo__text {
-    fill: #20223A;
+    fill: var(--logo-text);
 }
 
 .c-logo__symbol {
@@ -512,21 +543,21 @@ input {
 
     font-family: inherit;
     font-size: 16px;
-    line-height: 24px;
+    line-height: calc(var(--global-baseline) * 3);
 
     width: 100%;
 
-    background-color: #fff;
-    border: 2px solid #E2E3E7;
+    background-color: var(--input-background);
+    border: var(--input-border);
     border-radius: 3px;
-    color: #20223A;
+    color: var(--input-text-color);
 
     padding: 10px 18px;
 }
 
 .c-input:focus {
-    border-color: #4f95ff;
-    box-shadow: 0 0 3px 3px #4f95ff4d;
+    border-color: var(--input-focus-border-color);
+    box-shadow: var(--input-focus-boxshadow);
 }
 
 /*
@@ -537,9 +568,9 @@ input {
 
 .c-label {
     font-size: 14px;
-    line-height: 16px;
+    line-height: calc(var(--global-baseline) * 2);
     margin-bottom: 8px;
-    color: #606274;
+    color: var(--label-color);
 }
 
 .c-label--option {
@@ -561,15 +592,15 @@ input {
 .c-button {
     outline: none;
 
-    color: #fff;
-    background-color: #3385FF;
+    color: var(--button-color);
+    background-color: var(--button-background-color);
 
-    border: 1px solid #2E77E6;
+    border: var(--button-border);
 
     font-family: inherit;
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
+    line-height: calc(var(--global-baseline) * 3);
 
     width: 100%;
     padding: 12px;
@@ -578,19 +609,19 @@ input {
 .c-button:hover {
     cursor: pointer;
 
-    background-color: #4F95FF;
+    background-color: var(--button-hover-bg-color);
 }
 
 .c-button:focus {
-    box-shadow: 0 0 3px 3px #3385FF;
+    box-shadow: var(--button-focus-boxshadow);
 }
 
 .c-button:active {
-    background-color: #2E77E6;
+    background-color: var(--button-active-bg-color);
 }
 
 .c-button--block {
-
+    display: block;
 }
 
 /*
